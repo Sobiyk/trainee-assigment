@@ -48,3 +48,5 @@ alembic upgrade head
 ```
 uvicorn app.main:app --reload
 ```
+
+### Также скачать документацию отдельно можно [здесь](https://disk.yandex.ru/d/toJ0oTJhmJcwgg)
