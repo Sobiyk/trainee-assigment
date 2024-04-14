@@ -34,7 +34,7 @@ class Banner(BaseIntPK):
         back_populates='banners', secondary='tagbanner', lazy='raise'
     )
     feature_id: Mapped[int] = mapped_column(ForeignKey('feature.id'))
-    is_active: Mapped[bool]
+    is_active: Mapped[bool] = mapped_column(default=True)
     created_at: Mapped[dt.datetime] = mapped_column(
         server_default=func.now()
     )

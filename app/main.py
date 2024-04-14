@@ -5,6 +5,7 @@ from redis import asyncio as aioredis
 
 from app.api.routers import main_router
 from app.core.config import settings
+from app.core.init_db import create_first_superuser
 
 app = FastAPI(
     title=settings.app_title,
@@ -18,3 +19,4 @@ app.include_router(main_router)
 async def startup():
     redis = aioredis.from_url("redis://localhost")
     FastAPICache.init(RedisBackend(redis), prefix="fastapi-cache")
+    await create_first_superuser()

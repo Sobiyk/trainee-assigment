@@ -14,7 +14,6 @@ class BannerCreate(BaseModel):
     tag_ids: list[int]
     feature_id: int
     content: BannerContentCreate
-    is_active: bool
 
 
 class BannerCreateOut(BaseModel):
